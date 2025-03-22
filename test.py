@@ -18,7 +18,7 @@ def divide(a, b):
 # Get user input
 input1 = float(input("Enter first number: "))
 input2 = float(input("Enter second number: "))6
-operator = input("Enter operator: ")
+operator = input("Enter the operator: ")
 
 if operator == '+':
     result = add(input1, input2)
