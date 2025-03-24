@@ -1,43 +1,41 @@
+from functions import add, subtract, multiply, divide, get_number
+
 print("Basic Calculator:")
 
+from functions import add, subtract, multiply, divide, get_number
 
-def add(a, b):
-    return a + b
-
-def subtract(a, b):
-    return a - b
-
-def multiply(a, b):
-    return a * b
-
-def divide(a, b):
-    if b == 0:
-        return "Math Error"
-    return a / b
-
-def get_number(prompt):
+def main():
     while True:
-        try:
-            return float(input(prompt))
-        except ValueError:
-            print("Invalid input. Please enter a valid number.")
+        # Getting user input 
+        input1 = get_number("Enter first number: ")
+        input2 = get_number("Enter second number: ")
+        operator = input("Enter the operator or 'q' to quit: ")
 
-# Get user input safely
-input1 = get_number("Enter first number: ")
-input2 = get_number("Enter second number: ")
-operator = input("Enter the operator (+, -, *, /): ")
+        # Exit condition
+        if operator.lower() == 'q':
+            print("Exiting the calculator.")
+            break
 
-# Perform the operation
-if operator == '+':
-    result = add(input1, input2)
-elif operator == '-':
-    result = subtract(input1, input2)
-elif operator == '*':
-    result = multiply(input1, input2)
-elif operator == '/':
-    result = divide(input1, input2)
-else:
-    result = "Invalid operator"
+        # Perform the operation based on operator
+        if operator == '+':
+            result = add(input1, input2)
+        elif operator == '-':
+            result = subtract(input1, input2)
+        elif operator == '*':
+            result = multiply(input1, input2)
+        elif operator == '/':
+            result = divide(input1, input2)
+        else:
+            result = "Invalid operator"
 
-# Display result
-print("Result:", result)
+        # Save calculation history to a file
+        with open("calculation_history.txt", "a") as file:
+            file.write(f"{input1} {operator} {input2} = {result}\n")
+
+        # Display the result
+        print("Result:", result)
+
+
+if __name__ == "__main__":  
+    main()
+
