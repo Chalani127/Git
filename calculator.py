@@ -15,11 +15,19 @@ def divide(a, b):
         return "Math Error"
     return a / b
 
-# Get user input
-input1 = float(input("Enter first number: "))
-input2 = float(input("Enter second number: "))6
-operator = input("Enter the operator: ")
+def get_number(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
 
+# Get user input safely
+input1 = get_number("Enter first number: ")
+input2 = get_number("Enter second number: ")
+operator = input("Enter the operator (+, -, *, /): ")
+
+# Perform the operation
 if operator == '+':
     result = add(input1, input2)
 elif operator == '-':
@@ -31,4 +39,5 @@ elif operator == '/':
 else:
     result = "Invalid operator"
 
+# Display result
 print("Result:", result)
