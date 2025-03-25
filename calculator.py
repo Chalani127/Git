@@ -1,4 +1,4 @@
-from functions import add, subtract, multiply, divide, get_number
+from functions import add, subtract, multiply, divide, get_number, modulo, power 
 
 print("Basic Calculator:")
 
