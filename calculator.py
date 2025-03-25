@@ -23,6 +23,10 @@ def main():
             result = multiply(input1, input2)
         elif operator == '/':
             result = divide(input1, input2)
+        elif operator == '**':  
+            result = power(input1, input2)
+        elif operator == '%':  
+            result = modulo(input1, input2)
         else:
             result = "Invalid operator"
 
@@ -36,4 +40,5 @@ def main():
 
 if __name__ == "__main__":  
     main()
+
 
