@@ -18,3 +18,9 @@ def get_number(prompt):
             return float(input(prompt))
         except ValueError:
             print("Invalid input. Please enter a valid number.")
+
+def power(a, b):
+    return a ** b
+
+def modulo(a, b):
+    return a % b
