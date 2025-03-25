@@ -2,8 +2,6 @@ from functions import add, subtract, multiply, divide, get_number
 
 print("Basic Calculator:")
 
-from functions import add, subtract, multiply, divide, get_number
-
 def main():
     while True:
         # Getting user input 
